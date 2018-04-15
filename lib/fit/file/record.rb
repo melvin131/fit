@@ -17,10 +17,13 @@ module Fit
 
       def read(io)
         @header = RecordHeader.read(io)
-
         @content = case @header.message_type.snapshot
         when 1
           Definition.read(io).tap do |definition|
+            puts "--------"
+            puts "> header: #{@header.local_message_type.snapshot}"
+            puts @header
+            puts definition
             @@definitions[@header.local_message_type.snapshot] = Data.generate(definition)
           end
         when 0
