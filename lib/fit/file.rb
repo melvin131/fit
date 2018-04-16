@@ -17,10 +17,13 @@ module Fit
       Record.clear_definitions!
 
       while io.pos < @header.end_pos
+        puts "Record #{Record.read(io)}"
         @records << Record.read(io)
       end
 
       @crc = io.read(2)
+      
+      puts "CRC #{@crc}"
 
       self
     end
