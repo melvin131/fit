@@ -12,9 +12,9 @@ module Fit
     end
 
     def read(io)
-      puts "reading..."
+      puts "reading header..."
       @header = Header.read(io)
-      puts "header done."
+      puts "header done. #{@header.end_pos}"
       
       Record.clear_definitions!
 
