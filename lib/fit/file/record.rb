@@ -27,10 +27,10 @@ module Fit
             @@definitions[@header.local_message_type.snapshot] = Data.generate(definition)
           end
         when 0
-          definition = @@definitions[@header.local_message_type.snapshot]
+          # definition = @@definitions[@header.local_message_type.snapshot]
           puts "Header local message type: #{@header.local_message_type.snapshot}"
           # raise "No definition for local message type: #{@header.local_message_type}" if definition.nil?
-          puts "No definition for local message type: #{@header.local_message_type}" if definition.nil?
+          # puts "No definition for local message type: #{@header.local_message_type}" if definition.nil?
           # definition.read(io)
         end
 
