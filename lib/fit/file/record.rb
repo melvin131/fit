@@ -31,7 +31,7 @@ module Fit
           puts "Header local message type: #{@header.local_message_type.snapshot}"
           # raise "No definition for local message type: #{@header.local_message_type}" if definition.nil?
           puts "No definition for local message type: #{@header.local_message_type}" if definition.nil?
-          definition.read(io)
+          # definition.read(io)
         end
 
         self
